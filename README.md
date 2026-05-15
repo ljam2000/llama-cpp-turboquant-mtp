@@ -22,7 +22,7 @@
 
 - **llama.cpp 上游**: [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
 - **TurboQuant 项目**: [TheTom/llama-cpp-turboquant](https://github.com/TheTom/llama-cpp-turboquant)
-- **代码基础**: [trbom5c/LLama.cpp](https://github.com/trbom5c/LLama.cpp)（上游 fork，turboquant 集成源）
+- **代码基础**: [trbom5c/LLama.cpp](https://github.com/trbom5c/LLama.cpp)（MTP speculative decoding 来源）
 
 [Manifesto](https://github.com/ggml-org/llama.cpp/discussions/205) / [ggml](https://github.com/ggml-org/ggml) / [ops](https://github.com/ggml-org/llama.cpp/blob/master/docs/ops.md)
 
