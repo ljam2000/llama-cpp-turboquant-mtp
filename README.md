@@ -1,14 +1,31 @@
-# llama.cpp
+# llama.cpp — TurboQuant + MTP
 
 ![llama](https://user-images.githubusercontent.com/1991296/230134379-7181e485-c521-4d23-a0d6-f7b3b61ba524.png)
 
+> **Fork of [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) with [TurboQuant](https://github.com/TheTom/llama-cpp-turboquant) (turbo2/3/4 KV-cache quantization) and MTP (Multi-Token Prediction) speculative decoding support.**
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/v/release/ggml-org/llama.cpp)](https://github.com/ggml-org/llama.cpp/releases)
-[![Server](https://github.com/ggml-org/llama.cpp/actions/workflows/server.yml/badge.svg)](https://github.com/ggml-org/llama.cpp/actions/workflows/server.yml)
+[![Upstream Release](https://img.shields.io/github/v/release/ggml-org/llama.cpp)](https://github.com/ggml-org/llama.cpp/releases)
+
+## What's different from upstream?
+
+| Feature | Description |
+|---------|-------------|
+| **TurboQuant KV-cache** | KV-cache 量化 (turbo2/3/4)，显著降低显存占用，提升解码速度 |
+| **MTP Speculative Decoding** | 支持多 token 预测（Multi-Token Prediction），利用模型的 draft heads 做推测解码 |
+| **Vulkan/Metal/HIP turbo 支持** | turbo 量化格式的全后端支持（CUDA, ROCm/HIP, Vulkan, Metal）|
+| **Sparse V / Flash Attention 优化** | CUDA tile-level skip、warp-uniform skip、turbo VEC FA（+9% decode）|
+| **CVE-2026-21869 修复** | 修复 server `n_discard` 负数导致的堆溢出漏洞 |
+| **Qwen3.5-MoE MTP 模型** | 新增 qwen35moe_mtp 模型架构支持 |
+
+## Upstream
+
+- **llama.cpp 上游**: [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+- **TurboQuant 项目**: [TheTom/llama-cpp-turboquant](https://github.com/TheTom/llama-cpp-turboquant)
 
 [Manifesto](https://github.com/ggml-org/llama.cpp/discussions/205) / [ggml](https://github.com/ggml-org/ggml) / [ops](https://github.com/ggml-org/llama.cpp/blob/master/docs/ops.md)
 
-LLM inference in C/C++
+LLM inference in C/C++ with turboquant KV-cache quantization and MTP speculative decoding.
 
 ## Recent API changes
 
